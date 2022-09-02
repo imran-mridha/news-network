@@ -54,15 +54,14 @@ const displayCategoryNews = async () => {
     const article = document.createElement('article');
     article.innerHTML = `
     <div class="w-11/12 mx-auto py-5">
-            <div class="grid grid-cols-4 gap-2 rounded-xl bg-white shadow-2xl p-5">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-2 rounded-xl bg-white shadow-2xl p-5">
               <div>
                 <img class=" w-full  md:h-auto object-cover md:w-80  rounded-lg "
                   src="${thumbnail_url ? thumbnail_url: 'Not Available'}" alt="" />
               </div>
               <div class="col-span-3 p-6 flex flex-col justify-start">
-                <h5 class="text-gray-900 text-xl font-medium mb-2">${title ? title.slice(0,90): 'Title Not Found'}</h5>
-                <p class="text-gray-700 text-base mb-4">${details ? details.slice(0,300): 'Post Details Not Found'}...</p>
-                <p class="text-gray-600 text-xs">Last updated 3 mins ago</p>
+                <h5 class="text-gray-900 text-xl font-medium mb-2">${title.length > 70 ? title.slice(0,70) + '...' : title}</h5>
+                <p class="text-gray-700 text-base mb-4">${details.length > 350 ? details.slice(0,350) + '...' : details}</p>
                 <div class="flex items-center justify-between">
                   <div class="author-container flex my-5">
                     <div class="author-img">
