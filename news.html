@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>News Network</title>
+  <!-- fontawesome  -->
+  <script src="https://kit.fontawesome.com/e985616ad0.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
@@ -23,7 +25,7 @@
   </script>
 </head>
 
-<body>
+<body class="bg-slate-50">
 
   <header>
     <!-- Navbar -->
@@ -100,7 +102,7 @@
     <section class="my-10">
       <!-- Categories will display here  -->
       <div class="category-container">
-        <ul class="flex justify-between">
+        <!-- <ul id="category-container" class="flex justify-between">
           <li><a href="">Home</a></li>
           <li><a href="">Breaking news</a></li>
           <li><a href="">Regular news</a></li>
@@ -110,7 +112,36 @@
           <li><a href="">Culture</a></li>
           <li><a href="">Arts</a></li>
           <li><a href="">All news</a></li>
-        </ul>
+        </ul> -->
+        <nav class="relative w-11/12 mx-auto flex flex-wrap items-center justify-between text-gray-500
+        hover:text-gray-700focus:text-gray-700shadow-lgnavbar navbar-expand-lg navbar-light">
+          <div class="container-fluid w-full flex flex-wrap items-center justify-between px-6">
+            <div class="grid grid-cols-4 gap-4">
+              <div class="col-span-3">
+                <button class="navbar-toggler text-gray-500 border-0 hover:shadow-none hover:no-underline py-2px-2.5 bg-transparent focus:outline-none focus:ring-0 focus:shadow-none focus:no-underline" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" class="w-6" role="img"
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path fill="currentColor"
+                  d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z">
+                </path>
+              </svg>
+            </button>
+              </div>
+            <div class="invisible">
+              <h3 class="text-center">Category</h3>
+            </div>
+            </div>
+            <div class="collapse navbar-collapse flex-grow items-center" id="navbarSupportedContent">
+              <ul id="category-container" class="navbar-nav flex flex-col pl-0 list-style-none mr-auto text-lg ">
+                <li class="nav-item pr-2">
+                  <a class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" href="#">Dashboard</a>
+                </li>
+              </ul>
+            </div>
+            </nav>
+          </div>
+        </nav>
       </div>
     </section>
     <!-- Category Status  -->
@@ -126,7 +157,9 @@
           <h2 class="py-1.5 mr-5 font-bold">Sort By View:</h2>
           <div class="flex">
             <div class="mb-3 xl:w-96">
-              <select class="form-select appearance-none block w-9/12 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example">
+              <select
+                class="form-select appearance-none block w-9/12 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                aria-label="Default select example">
                 <option selected>Default</option>
                 <option value="1">One</option>
                 <option value="2">Two</option>
@@ -137,12 +170,70 @@
         </div>
         <div class="grid grid-cols-2 gap-4">
           <div class="">
-            <button type="button" class="w-full inline-block px-10 py-3 border-2 border-red-500 bg-red-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg active:text-white transition duration-150 ease-in-out">Today's Pick</button>
+            <button type="button"
+              class="w-full inline-block px-5 py-3 border-2 border-red-500 bg-red-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg active:text-white transition duration-150 ease-in-out">Today's
+              Pick</button>
           </div>
           <div class="">
-            <button type="button" class="w-full inline-block px-10 py-3 border-2 border-red-500 text-red-500 hover:text-white focus:text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg active:text-white transition duration-150 ease-in-out">Today's Pick</button>
+            <button type="button"
+              class="w-full inline-block px-5 py-3 border-2 border-red-500 text-red-500 hover:text-white focus:text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg active:text-white transition duration-150 ease-in-out">Treding</button>
           </div>
         </div>
+      </div>
+    </section>
+    <!-- Articale Section  -->
+    <section class="articale-section py-5">
+      <div id="post-container" class="articale">
+        <article>
+          <!-- <div class="w-11/12 mx-auto">
+            <div class="flex flex-col md:flex-row  rounded-xl bg-white shadow-2xl p-5">
+              <div>
+                <img class=" w-full h-96 md:h-auto object-cover md:w-80 md:h-72 rounded-lg "
+                  src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg" alt="" />
+              </div>
+              <div class="p-6 flex flex-col justify-start">
+                <h5 class="text-gray-900 text-xl font-medium mb-2">Card title</h5>
+                <p class="text-gray-700 text-base mb-4">
+                  This is a wider card with supporting text below as a natural lead-in to additional content. This
+                  content is a little bit longer.
+                </p>
+                <p class="text-gray-700 text-base mb-4">
+                  This is a wider card with supporting text This is a wider card with supporting text...
+                </p>
+                <p class="text-gray-600 text-xs">Last updated 3 mins ago</p>
+                <div class="flex items-center justify-between">
+                  <div class="author-container flex my-5">
+                    <div class="author-img">
+                      <img src="/img/iman.png" class="rounded-full mr-5" style="height: 50px; width: 50px" alt=""
+                        loading="lazy" />
+                    </div>
+                    <div class="author-details">
+                      <div class="author name">
+                        <p>Jane Cooper</p>
+                        <p>Jan 10, 2022 </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="view-container flex">
+                    <p><i class="fa-regular fa-eye mr-2"></i></p>
+                    <p>1.5M</p>
+                  </div>
+                  <div class="review-container text-red-400">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                  </div>
+                  <div class="details-container">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+        </article>
+        
       </div>
     </section>
   </main>
