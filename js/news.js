@@ -1,7 +1,6 @@
 
 const categoryContainer = document.getElementById('category-container');
 const postContainer = document.getElementById('post-container')
-
 // Load Categories
 
 const loadCategories = async () => {
@@ -10,43 +9,52 @@ const loadCategories = async () => {
   const res = await fetch(url);
   const data = await res.json();
 
-  return(data.data.news_category);
+  displayCategories(data.data.news_category);
 }
 // Dispaly Categories
-const displayCategories = async () => {
-  const categories = await loadCategories();
-  // console.log(categories)
+const displayCategories = categories => {
+  // const categories = await loadCategories();
+  // console.log(categories);
+  
 
-  categories.forEach(category => {
+  categories?.forEach(category => {
     // console.log(category)
     const {category_id,category_name} = category;
-    // console.log(category_name)
+    // console.log(category_id)
     const li = document.createElement('li');
     li.classList.add('nav-item');
     li.classList.add('pr-2');
     li.innerHTML = `
-    <a onclick= "loadCategoryNews('${category_id}')" class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" href="#!">${category_name}</a>
+    <button type="button" onclick= "loadCategoryNews('${category_id}')" class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0">${category_name}</button>
     `;
-    categoryContainer.appendChild(li)
+    categoryContainer.appendChild(li);
+    return category;
   });
+  
 }
 
 const loadCategoryNews = async id => {
-  const url = `https://openapi.programming-hero.com/api/news/category/01`;
-  console.log(url)
+  const url = `https://openapi.programming-hero.com/api/news/category/${id}`;
+  // console.log(url)
 
   const res = await fetch(url);
   const data = await res.json();
-  // console.log(data.data)
-  return(data.data)
+  displayCategoryNews(data.data)
+  // return(data.data)
 }
 
-const displayCategoryNews = async () => {
-  const categoryNews = await loadCategoryNews();
-  console.log(categoryNews)
-
-  categoryNews.forEach(news => {
-    console.log(news)
+const displayCategoryNews =  categoryNews => {
+  
+  const countStatus = document.getElementById('status');
+  const postCount = document.getElementById('count-post');
+  postCount.innerHTML =`
+  ${categoryNews.length} items found for category Entertainment
+  `;
+  // countStatus.classList.remove('invisible');
+  const postContainer = document.getElementById('post-container')
+  postContainer.innerHTML = '';
+  categoryNews?.forEach(news => {
+    // console.log(news)
     const {thumbnail_url,title,details,author,total_view,rating} = news;
     const {img,name,published_date} = author;
     const {number} = rating;
@@ -65,26 +73,23 @@ const displayCategoryNews = async () => {
                 <div class="flex items-center justify-between">
                   <div class="author-container flex my-5">
                     <div class="author-img">
-                      <img src="/img/iman.png" class="rounded-full mr-5" style="height: 50px; width: 50px" alt=""
+                      <img src="${img ? img: 'Image Not Found'}" class="rounded-full mr-5" style="height: 50px; width: 50px" alt=""
                         loading="lazy" />
                     </div>
                     <div class="author-details">
                       <div class="author name">
-                        <p>Jane Cooper</p>
-                        <p>Jan 10, 2022 </p>
+                        <p>${name? name: 'Name Not Found'}</p>
+                        <p>${published_date ? published_date: 'Published Date not found'}</p>
                       </div>
                     </div>
                   </div>
                   <div class="view-container flex">
                     <p><i class="fa-regular fa-eye mr-2"></i></p>
-                    <p>1.5M</p>
+                    <p>${total_view ? total_view + 'M': 'Data Not found'}</p>
                   </div>
                   <div class="review-container text-red-400">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half-stroke"></i>
+                    <p>Ratings: (${number ? number: 'Rattings Not found'})</p>
+                    
                   </div>
                   <div class="details-container">
                     <i class="fa-solid fa-arrow-right"></i>
@@ -98,7 +103,6 @@ const displayCategoryNews = async () => {
     postContainer.appendChild(article)
   })
 }
-
-displayCategories()
+loadCategories()
 
 displayCategoryNews()
