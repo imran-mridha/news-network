@@ -24,8 +24,9 @@ const displayCategories = categories => {
     const li = document.createElement('li');
     li.classList.add('nav-item');
     li.classList.add('pr-2');
+    li.classList.add('category-title');
     li.innerHTML = `
-    <button type="button" onclick= "loadCategoryNews('${category_id}')" class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0">${category_name}</button>
+    <button type="button" onclick= "loadCategoryNews('${category_id}')" class="nav-link text-gray-500 hover:text-gray-700 hover:bg-red-600 hover:text-white focus:text-white focus:bg-red-700 p-1 rounded">${category_name}</button>
     `;
     categoryContainer.appendChild(li);
     return category;
@@ -36,7 +37,7 @@ const displayCategories = categories => {
 const loadCategoryNews = async id => {
   const url = `https://openapi.programming-hero.com/api/news/category/${id}`;
   // console.log(url)
-
+  toggleSpinner(true)
   const res = await fetch(url);
   const data = await res.json();
   displayCategoryNews(data.data)
@@ -44,7 +45,10 @@ const loadCategoryNews = async id => {
 }
 
 const displayCategoryNews =  categoryNews => {
-  
+  console.log(categoryNews)
+  if(categoryNews.length === 0){
+    toggleSpinner(false);
+  }
   const countStatus = document.getElementById('status');
   const postCount = document.getElementById('count-post');
   postCount.innerHTML =`
@@ -55,6 +59,7 @@ const displayCategoryNews =  categoryNews => {
   postContainer.innerHTML = '';
   categoryNews?.forEach(news => {
     // console.log(news)
+    
     const {_id,thumbnail_url,title,details,author,total_view,rating} = news;
     // console.log(_id)
     const {img,name,published_date} = author;
@@ -93,9 +98,10 @@ const displayCategoryNews =  categoryNews => {
                     
                   </div>
                   <div class="details-container">
-                    <button onclick="loadPostDetails('${_id}')" type="button" class="px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" data-bs-toggle="modal"data-bs-target="#exampleModal">
+                    <button onclick="loadPostDetails('${_id}')" type="button" class="px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out" data-bs-toggle="modal"data-bs-target="#exampleModal">
                     <i class="fa-solid fa-arrow-right"></i>
                     </button>
+
                   </div>
                 </div>
               </div>
@@ -103,7 +109,8 @@ const displayCategoryNews =  categoryNews => {
           </div>
     `;
 
-    postContainer.appendChild(article)
+    postContainer.appendChild(article);
+    toggleSpinner(false)
   })
 }
 // Load Post Details
@@ -134,7 +141,32 @@ const displayPostDetails = detailsPost => {
   <p>Published Date: ${published_date}</p>
   `;
 }
+// Toggle Spinner
+const toggleSpinner = isLoading => {
+  const spinner = document.getElementById('spinner');
 
-loadCategories('Entertainment')
+  if(isLoading){
+    spinner.classList.remove('hidden')
+  }else{
+    spinner.classList.add('hidden')
+  }
+}
 
-// displayCategoryNews()
+///// Default
+
+// const defaultCategoryNews = async () => {
+//   const url = `https://openapi.programming-hero.com/api/news/category/${id}`;
+//   // console.log(url)
+//   toggleSpinner(true)
+//   const res = await fetch(url);
+//   const data = await res.json();
+//   displayCategoryNews(data.data)
+//   // return(data.data)
+// }
+
+
+
+
+loadCategories()
+
+displayCategoryNews()
