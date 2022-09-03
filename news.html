@@ -29,9 +29,9 @@
 
 <body class="bg-slate-50">
 
-  <header>
+  <header class="bg-red-800">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg shadow-md py-4 bg-slate-900 relative flex items-center w-full justify-between">
+    <nav class="navbar navbar-expand-lg shadow-md py-4  relative flex items-center w-full justify-between"style="background-color: rgba(0, 0, 0, 0.5);">
       <div class="w-11/12 mx-auto flex flex-wrap items-center justify-between">
         <div class="flex items-center grow">
 
@@ -55,7 +55,7 @@
           <ul class="navbar-nav mr-auto lg:flex lg:flex-row">
             <li class="nav-item">
               <a class="nav-link block pr-2 lg:px-2 py-2 mr-7 text-white hover:text-red-400 focus:text-red-700 focus:border-red-700 transition duration-150 ease-in-out border-b-2 border-transparent hover:border-b-2 hover:border-red-600 font-bold"
-                href="index.html" data-mdb-ripple="true" data-mdb-ripple-color="light">Home</a>
+                href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link block pr-2 lg:px-2 py-2 mr-7 text-red-400 hover:text-red-400 focus:text-red-700 focus:border-red-700 transition duration-150 ease-in-out border-b-2 border-red-600 hover:border-b-2 hover:border-red-600 font-bold"
@@ -63,7 +63,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link block pr-2 lg:px-2 py-2 mr-7 text-white hover:text-red-400 focus:text-red-700 focus:border-red-700 transition duration-150 ease-in-out border-b-2 border-transparent hover:border-b-2 hover:border-red-600 font-bold"
-                href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">Blog</a>
+                href="blog.html" data-mdb-ripple="true" data-mdb-ripple-color="light">Blog</a>
             </li>
             <li class="nav-item mb-2 lg:mb-0">
               <a class="nav-link block pr-2 lg:px-2 py-2 mr-7 text-white hover:text-red-400 focus:text-red-700 focus:border-red-700 transition duration-150 ease-in-out border-b-2 border-transparent hover:border-b-2 hover:border-red-600 font-bold"
@@ -71,8 +71,6 @@
             </li>
           </ul>
           <div class="flex">
-            <!-- <img src="https://mdbootstrap.com/img/new/avatars/2.jpg" class="rounded-full"
-        style="height: 50px; width: 50px" alt="" loading="lazy" /> -->
             <img src="/img/iman.png" class="rounded-full" style="height: 50px; width: 50px" alt="" loading="lazy" />
           </div>
         </div>
@@ -80,39 +78,27 @@
     </nav>
     <!-- // Hero Section  -->
     <!-- // Background Image  -->
-    <!-- <section class="relative overflow-hidden bg-no-repeat bg-cover"
-      style="background-position: 80%; background-image: url('img/food-hero.jpg');height: 100vh;">
+    <section class="relative overflow-hidden bg-no-repeat bg-cover"
+      style="background-position: 80%; background-image: url('img/news-hero.jpg');height: 100vh;">
       <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
         style="background-color: rgba(0, 0, 0, 0.75)">
-        <div class="w-11/12 mx-auto h-full flex items-center">
-          <div class="text-white text-center md:text-start">
-            <h1 class="text-5xl font-bold mt-0 mb-6 uppercase">Wellcome to <span class="text-blue-600">MealDB</span>
+        <div class="w-11/12 mx-auto h-full flex items-center justify-center">
+          <div class="text-white text-center">
+            <h1 class="text-5xl font-bold mt-0 mb-6 uppercase">Wellcome to <span class="text-red-600">News Network</span>
             </h1>
-            <h3 class="text-xl mb-8">We ensure your favorite meal. So get your meal <br> by searching food name.</h3>
+            <h3 class="text-xl mb-8 w-6/12 mx-auto">News Network envisions a nation where citizens are aware of their rights, </h3>
             <button type="button"
-              class="inline-block px-6 py-3.5 border-2 border-blue-500 text-white font-medium text-xs leading-tight uppercase rounded  hover:bg-blue-700  focus:bg-blue-700  transition duration-150 ease-in-out">Get
-              your meal</button>
+              class="inline-block px-6 py-3.5 border-2 border-red-500 text-white font-medium text-xs leading-tight uppercase rounded  hover:bg-red-700  focus:bg-red-700  transition duration-150 ease-in-out">Explore News</button>
           </div>
         </div>
       </div>
-    </section> -->
+    </section>
   </header>
   <main class="w-11/12 mx-auto">
     <!-- Category Section  -->
     <section class="my-10">
       <!-- Categories will display here  -->
       <div class="category-container">
-        <!-- <ul id="category-container" class="flex justify-between">
-          <li><a href="">Home</a></li>
-          <li><a href="">Breaking news</a></li>
-          <li><a href="">Regular news</a></li>
-          <li><a href="">International news</a></li>
-          <li><a href="">Sports</a></li>
-          <li><a href="">Entertainment</a></li>
-          <li><a href="">Culture</a></li>
-          <li><a href="">Arts</a></li>
-          <li><a href="">All news</a></li>
-        </ul> -->
         <nav class="relative w-11/12 mx-auto flex flex-wrap items-center justify-between text-gray-500
         hover:text-gray-700focus:text-gray-700shadow-lgnavbar navbar-expand-lg navbar-light">
           <div class="container-fluid w-full flex flex-wrap items-center justify-between px-6">
@@ -152,21 +138,17 @@
     </section>
     <!-- Sorting Section  -->
     <section class="sorting-section">
-      <div class="sorting flex justify-between">
-        <div class="flex">
+      <div class="sorting flex flex-col md:flex-row justify-between">
+        <div class="flex justify-between">
           <h2 class="py-1.5 mr-5 font-bold">Sort By View:</h2>
-          <div class="flex">
-            <div class="mb-3 xl:w-96">
+            <div class="mb-3 w-96 md:w-52 mx-auto">
               <select
-                class="form-select appearance-none block w-9/12 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                class="form-select appearance-none block w-11/12 lg:w-11/12 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-red-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none"
                 aria-label="Default select example">
                 <option selected>Default</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option value="1">Popular</option>
               </select>
             </div>
-          </div>
         </div>
         <div class="grid grid-cols-2 gap-4">
           <div class="">
@@ -243,7 +225,8 @@
       </div>
     </section>
     <!-- Modal Section  -->
-    <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
+    <section class="modal-section">
+      <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
       id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog relative w-auto pointer-events-none">
         <div
@@ -268,52 +251,55 @@
         </div>
       </div>
     </div>
+    </section>
   </main>
-  <footer class="bg-gray-900 text-white">
+  <footer class="bg-red-800 text-white">
     <div class="container px-6 pt-6 w-11/12 mx-auto">
       <div class="grid lg:grid-cols-4 gap-4 md:grid-cols-2">
         <div class="mb-6">
-          <div class="text-white text-3xl">
-            <h2 class="uppercase"> <span class="text-red-600 font-bold">News</span> Network</h2>
+          <div class="text-white text-3xl text-center md:text-start">
+            <h2 class="uppercase"> <span class="text-red-600 font-bold font-extrabold">News</span> Network</h2>
           </div>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti itaque autem recusandae eveniet vero
-            asperiores id voluptatem illum laborum cumque!</p>
+          <p class="text-center md:text-start">News Network envisions a nation where citizens are aware of their rights, enjoy freedom of expression, dignity of life and gender equality and where the media is free.</p>
         </div>
 
         <div class="mb-6">
-          <h5 class="uppercase font-bold mb-2.5 text-2xl">Products</h5>
-
-          <ul class="list-none mb-0">
+          <h5 class="uppercase font-bold mb-2.5 text-2xl text-center md:text-start">Categories</h5>
+          <ul class="list-none mb-0 text-center md:text-start">
             <li>
-              <a href="#!" class="text-white">Lorem ipsum dolor sit amet.</a>
+              <a href="#!" class="text-white">Breaking News</a> ||
+              <a href="#!" class="text-white">Regular News</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Lorem ipsum dolor sit amet.</a>
+              <a href="#!" class="text-white">International News</a> ||
+              <a href="#!" class="text-white">Sports</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Lorem ipsum dolor sit amet.</a>
+              <a href="#!" class="text-white">Entertainment</a> ||
+              <a href="#!" class="text-white">Culture</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Lorem ipsum dolor sit amet.</a>
+              <a href="#!" class="text-white">Arts</a> ||
+              <a href="#!" class="text-white">All News</a>
             </li>
           </ul>
         </div>
 
         <div class="mb-6">
-          <h5 class="uppercase font-bold mb-2.5 text-2xl">Recent Blogs</h5>
+          <h5 class="uppercase font-bold mb-2.5 text-2xl text-center md:text-start">Recent Blogs</h5>
 
-          <ul class="list-none mb-0">
+          <ul class="list-none mb-0 text-center md:text-start">
             <li>
-              <a href="#!" class="text-white">Lorem ipsum dolor sit amet.</a>
+              <a href="#!" class="text-white">9 Things to do in Colorado</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Lorem ipsum dolor sit amet.</a>
+              <a href="#!" class="text-white">Up Late with Ben Harvey</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Lorem ipsum dolor sit amet.</a>
+              <a href="#!" class="text-white">California to phase out sales</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Lorem ipsum dolor sit amet.</a>
+              <a href="#!" class="text-white">Shaquille Neal auctions a 1000 size</a>
             </li>
           </ul>
         </div>
@@ -352,7 +338,7 @@
           </div>
         </div>
       </div>
-      <div class="flex justify-between mb-6 border-t pt-10">
+      <div class="flex flex-col md:flex-row items-center md:justify-between mb-6 border-t pt-10">
         <div class="">
           <a href="#!" type="button"
             class="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-red-600 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
@@ -396,7 +382,7 @@
         <div class="">
           <form action="">
             <div class="flex justify-between items-center">
-              <div class="md:mb-6 ">
+              <div class="mb-6">
                 <input type="text" class="form-control w-11/12 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition  ease-in-out m-0
                     focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none "
                   id="exampleFormControlInput1" placeholder="Email address" />
@@ -411,7 +397,7 @@
         </div>
       </div>
     </div>
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.2);">
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.5);">
       © 2022 Copyright:
       <a class="text-white" href="#">All Right Reserved By Imran.</a>
     </div>
