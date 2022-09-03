@@ -52,13 +52,13 @@ const displayCategoryNews =  (categoryNews,name) => {
   postContainer.innerHTML = '';
 
 // sort by most viewed
-   const sortFind = categoryNews.sort((minVew,maxView)=>{
-    if(minVew.total_view < maxView.total_view){
+   const sortFind = categoryNews.sort((x,y)=>{
+    if(x.total_view < y.total_view){
         return 1;
     }
     else{
         return -1;
-    }
+    }  
 })
   categoryNews?.forEach(news => {
     const {_id,thumbnail_url,title,details,author,total_view,rating} = news;
