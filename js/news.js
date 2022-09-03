@@ -55,7 +55,8 @@ const displayCategoryNews =  categoryNews => {
   postContainer.innerHTML = '';
   categoryNews?.forEach(news => {
     // console.log(news)
-    const {thumbnail_url,title,details,author,total_view,rating} = news;
+    const {_id,thumbnail_url,title,details,author,total_view,rating} = news;
+    // console.log(_id)
     const {img,name,published_date} = author;
     const {number} = rating;
     // console.log(thumbnail_url,title,details,author,total_view,rating)
@@ -92,7 +93,9 @@ const displayCategoryNews =  categoryNews => {
                     
                   </div>
                   <div class="details-container">
+                    <button onclick="loadPostDetails('${_id}')" type="button" class="px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" data-bs-toggle="modal"data-bs-target="#exampleModal">
                     <i class="fa-solid fa-arrow-right"></i>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -103,6 +106,35 @@ const displayCategoryNews =  categoryNews => {
     postContainer.appendChild(article)
   })
 }
-loadCategories()
+// Load Post Details
 
-displayCategoryNews()
+const loadPostDetails = async id => {
+  // console.log(id)
+  const url = `https://openapi.programming-hero.com/api/news/${id}`;
+  // console.log(url)
+
+  const res = await fetch(url);
+  const data = await res.json();
+  displayPostDetails(data.data[0])
+}
+
+const displayPostDetails = detailsPost => {
+  console.log(detailsPost);
+
+  const {title,image_url,details,author} = detailsPost;
+  const {name,published_date} = author;
+  // console.log(title,image_url,details)
+  const postTitle = document.getElementById('post-title');
+  postTitle.innerHTML = title;
+  const postDetails = document.getElementById('detils-post');
+  postDetails.innerHTML = `
+  <p class="text-gray-700 text-base mb-4">${details.length > 350 ? details.slice(0,350) + '...' : details}</p>
+  <img src="${image_url ? image_url: 'Image Not Found'}" alt="" />
+  <p class="py-3">Author Name: ${name}</p>
+  <p>Published Date: ${published_date}</p>
+  `;
+}
+
+loadCategories('Entertainment')
+
+// displayCategoryNews()
