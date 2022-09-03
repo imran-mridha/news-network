@@ -59,11 +59,11 @@
             </li>
             <li class="nav-item">
               <a class="nav-link block pr-2 lg:px-2 py-2 mr-7 text-white hover:text-red-400 focus:text-red-700 focus:border-red-700 transition duration-150 ease-in-out border-b-2 border-transparent hover:border-b-2 hover:border-red-600 font-bold"
-                href="news.html" data-mdb-ripple="true" data-mdb-ripple-color="light">News</a>
+                href="/index.html" target="_blank" data-mdb-ripple="true" data-mdb-ripple-color="light">News</a>
             </li>
             <li class="nav-item">
               <a class="nav-link block pr-2 lg:px-2 py-2 mr-7 text-red-400 hover:text-red-400 focus:text-red-700 focus:border-red-700 transition duration-150 ease-in-out border-b-2 border-red-600 hover:border-b-2 hover:border-red-600 font-bold"
-                href="blog.html" data-mdb-ripple="true" data-mdb-ripple-color="light">Blog</a>
+                href="/blog.html" target="_blank" data-mdb-ripple="true" data-mdb-ripple-color="light">Blog</a>
             </li>
             <li class="nav-item mb-2 lg:mb-0">
               <a class="nav-link block pr-2 lg:px-2 py-2 mr-7 text-white hover:text-red-400 focus:text-red-700 focus:border-red-700 transition duration-150 ease-in-out border-b-2 border-transparent hover:border-b-2 hover:border-red-600 font-bold"
@@ -95,7 +95,103 @@
     </section>
   </header>
   <main class="w-11/12 mx-auto">
-
+    <!-- Accordion -->
+    <section class="accordion-section my-10">
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item bg-white border border-gray-200">
+          <h2 class="accordion-header mb-0" id="headingOne">
+            <button class=" accordion-button relative flex items-center w-full py-4 px-5 text-2xl text-red-600 text-left bg-white border-0 rounded-none transition focus:outline-none
+            " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+              aria-controls="collapseOne">
+              Differences between Var, Let, and Const.
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body py-4 px-5">
+              <p>
+                JavaScript has three variable declaration statements: var , let and const. The latter two were added in ES6, whereas var existed since previous versions. One of the first things to notice is that const defines constants (i.e. values that will not be reassigned), whereas var and let define variables. Yet, var behaves differently from both let and const in various other ways.
+              </p>
+              <h2 class="text-2xl my-3 font-semibold">Scope</h2>
+              <p>Variables declared with var are function scoped, in contrast to variables declared with let or const which are block scoped.</p>
+              <h2 class="text-2xl my-3 font-semibold">Redeclaration</h2>
+              <p>variables declared with var can be re-declared in the same scope, whereas this is not allowed for variables declared with let or const.</p>
+              <h2 class="text-2xl my-3 font-semibold">Hoisting</h2>
+              <p>While variables declared with var are hoisted to the enclosing scope, variables declared with let or const are not initialized until their definition is evaluated.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item bg-white border border-gray-200">
+          <h2 class="accordion-header mb-0" id="headingTwo">
+            <button class="
+              accordion-button
+              collapsed
+              relative
+              flex
+              items-center
+              w-full
+              py-4
+              px-5
+              text-base text-gray-800 text-left
+              bg-white
+              border-0
+              rounded-none
+              transition
+              focus:outline-none
+            " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+              aria-controls="collapseTwo">
+              Accordion Item #2
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body py-4 px-5">
+              <strong>This is the second item's accordion body.</strong> It is hidden by default,
+              until the collapse plugin adds the appropriate classes that we use to style each
+              element. These classes control the overall appearance, as well as the showing and
+              hiding via CSS transitions. You can modify any of this with custom CSS or overriding
+              our default variables. It's also worth noting that just about any HTML can go within
+              the <code>.accordion-body</code>, though the transition does limit overflow.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item bg-white border border-gray-200">
+          <h2 class="accordion-header mb-0" id="headingThree">
+            <button class="
+              accordion-button
+              collapsed
+              relative
+              flex
+              items-center
+              w-full
+              py-4
+              px-5
+              text-base text-gray-800 text-left
+              bg-white
+              border-0
+              rounded-none
+              transition
+              focus:outline-none
+            " type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
+              aria-controls="collapseThree">
+              Accordion Item #3
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body py-4 px-5">
+              <strong>This is the third item's accordion body.</strong> It is hidden by default,
+              until the collapse plugin adds the appropriate classes that we use to style each
+              element. These classes control the overall appearance, as well as the showing and
+              hiding via CSS transitions. You can modify any of this with custom CSS or overriding
+              our default variables. It's also worth noting that just about any HTML can go within
+              the <code>.accordion-body</code>, though the transition does limit overflow.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
   <footer class="bg-red-800 text-white">
     <div class="container px-6 pt-6 w-11/12 mx-auto">

@@ -29,34 +29,33 @@ const displayCategories =async categories => {
     li.classList.add('pr-2');
     li.classList.add('category-title');
     li.innerHTML = `
-    <button type="button" onclick= "loadCategoryNews('${category_id}')" class="nav-link text-gray-500 hover:text-gray-700 hover:bg-red-600 hover:text-white focus:text-white focus:bg-red-700 p-1 rounded">${category_name}</button>
+    <button type="button" onclick= "loadCategoryNews(${category_id},'${category_name}')" class="nav-link text-gray-500 hover:text-gray-700 hover:bg-red-600 hover:text-white focus:text-white focus:bg-red-700 p-1 rounded">${category_name}</button>
     `;
     categoryContainer.appendChild(li);
   });
   
 }
 
-const loadCategoryNews = async id => {
-  const url = `https://openapi.programming-hero.com/api/news/category/${id}`;
-
+const loadCategoryNews = async (id, name) => {
+  const url = `https://openapi.programming-hero.com/api/news/category/0${id}`;
   toggleSpinner(true)
   try{
     const res = await fetch(url);
   const data = await res.json();
-  displayCategoryNews(data.data)
+  displayCategoryNews(data.data,name)
   }catch(error){
     console.log(error)
   }
 }
 
-const displayCategoryNews =  categoryNews => {
+const displayCategoryNews =  (categoryNews,name) => {
   if(categoryNews.length === 0){
     toggleSpinner(false);
   }
   const countStatus = document.getElementById('status');
   const postCount = document.getElementById('count-post');
   postCount.innerHTML =`
-  ${categoryNews.length} items found for category Entertainment
+  ${categoryNews.length} items found for category ${name}
   `;
   // countStatus.classList.remove('invisible');
   const postContainer = document.getElementById('post-container')
@@ -171,6 +170,5 @@ const toggleSpinner = isLoading => {
 
 ///// Default
 
-
-loadCategoryNews('05')
+loadCategoryNews('5','Entertainment')
 loadCategories()
