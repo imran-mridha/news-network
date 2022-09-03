@@ -52,12 +52,10 @@ const displayCategoryNews =  (categoryNews,name) => {
   if(categoryNews.length === 0){
     toggleSpinner(false);
   }
-  const countStatus = document.getElementById('status');
   const postCount = document.getElementById('count-post');
   postCount.innerHTML =`
-  ${categoryNews.length} items found for category ${name}
+  <span class="text-red-600 font-bold">${categoryNews.length}</span> items found for category <span class="text-red-600 font-bold">${name}.</span>
   `;
-  // countStatus.classList.remove('invisible');
   const postContainer = document.getElementById('post-container')
   postContainer.innerHTML = '';
    // sort 
@@ -103,7 +101,7 @@ const displayCategoryNews =  (categoryNews,name) => {
                   </div>
                   <div class="view-container flex">
                     <p><i class="fa-regular fa-eye mr-2"></i></p>
-                    <p>${total_view ? total_view + 'M': 'Data Not found'}</p>
+                    <p>${total_view ? total_view: 'Data Not found'}</p>
                   </div>
                   <div class="review-container text-red-400">
                     <p>Ratings: (${number ? number: 'Rattings Not found'})</p>

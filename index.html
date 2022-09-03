@@ -31,10 +31,10 @@
 
   <header class="bg-red-800">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg shadow-md py-4  relative flex items-center w-full justify-between"style="background-color: rgba(0, 0, 0, 0.5);">
+    <nav class="navbar navbar-expand-lg shadow-md py-4  relative flex items-center w-full justify-between"
+      style="background-color: rgba(0, 0, 0, 0.5);">
       <div class="w-11/12 mx-auto flex flex-wrap items-center justify-between">
         <div class="flex items-center grow">
-
           <button
             class="navbar-toggler border-0 py-3 lg:hidden leading-none text-xl bg-transparent text-white hover:text-gray-700 focus:text-gray-700 transition-shadow duration-150 ease-in-out mr-auto"
             type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContentY"
@@ -50,7 +50,6 @@
             <h2 class="uppercase"> <span class="text-red-600 font-bold">News</span> Network</h2>
           </div>
         </div>
-
         <div class="navbar-collapse collapse grow items-center" id="navbarSupportedContentY">
           <ul class="navbar-nav mr-auto lg:flex lg:flex-row">
             <li class="nav-item">
@@ -84,11 +83,14 @@
         style="background-color: rgba(0, 0, 0, 0.75)">
         <div class="w-11/12 mx-auto h-full flex items-center justify-center">
           <div class="text-white text-center">
-            <h1 class="text-5xl font-bold mt-0 mb-6 uppercase">Wellcome to <span class="text-red-600">News Network</span>
+            <h1 class="text-5xl font-bold mt-0 mb-6 uppercase">Wellcome to <span class="text-red-600">News
+                Network</span>
             </h1>
-            <h3 class="text-xl mb-8 w-6/12 mx-auto">News Network envisions a nation where citizens are aware of their rights, </h3>
+            <h3 class="text-xl mb-8 w-6/12 mx-auto">News Network envisions a nation where citizens are aware of their
+              rights.</h3>
             <button type="button"
-              class="inline-block px-6 py-3.5 border-2 border-red-500 text-white font-medium text-xs leading-tight uppercase rounded  hover:bg-red-700  focus:bg-red-700  transition duration-150 ease-in-out">Explore News</button>
+              class="inline-block px-6 py-3.5 border-2 border-red-500 text-white font-medium text-xs leading-tight uppercase rounded  hover:bg-red-700  focus:bg-red-700  transition duration-150 ease-in-out"><a
+                href="#post-container">Explore News</a></button>
           </div>
         </div>
       </div>
@@ -102,27 +104,27 @@
         <nav class="relative w-11/12 mx-auto flex flex-wrap items-center justify-between text-gray-500
         hover:text-gray-700focus:text-gray-700shadow-lgnavbar navbar-expand-lg navbar-light">
           <div class="container-fluid w-full flex flex-wrap items-center justify-between px-6">
-                <button
-                  class="navbar-toggler text-gray-500 border-0 hover:shadow-none hover:no-underline py-2px-2.5 bg-transparent focus:outline-none focus:ring-0 focus:shadow-none focus:no-underline"
-                  type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <div class="grid grid-cols-4 gap-4">
-                  <div class="col-span-3">
-                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" class="w-6" role="img"
+            <button
+              class="navbar-toggler text-gray-500 border-0 hover:shadow-none hover:no-underline py-2px-2.5 bg-transparent focus:outline-none focus:ring-0 focus:shadow-none focus:no-underline"
+              type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <div class="grid grid-cols-4 gap-4">
+                <div class="col-span-3">
+                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" class="w-6" role="img"
                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                     <path fill="currentColor"
                       d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z">
                     </path>
                   </svg>
-                  </div>
-                  <div><h3 class="text-center">Category</h3></div>
-                  </div>
-                </button>
+                </div>
+                <div>
+                  <h3 class="text-center text-2xl font-bold text-red-600">Category</h3>
+                </div>
+              </div>
+            </button>
             <div class="collapse navbar-collapse flex-grow items-center" id="navbarSupportedContent">
               <ul id="category-container" class="navbar-nav flex flex-col pl-0 list-style-none mr-auto text-lg ">
-                <!-- <li class="nav-item pr-2">
-                  <a class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" href="news.html">Home</a>
-                </li> -->
+                <!-- Category Names Will Display Here  -->
               </ul>
             </div>
         </nav>
@@ -133,22 +135,25 @@
     <!-- Category Status  -->
     <section id="status" class="category-status my-10 bg-red-200 rounded-lg">
       <div class="p-5 text-2xl">
-        <h2 id="count-post"></h2>
+        <h2 id="count-post">
+          <!-- Post Count Will display here  -->
+        </h2>
       </div>
     </section>
     <!-- Sorting Section  -->
+    <!-- without sorting functionality -->
     <section class="sorting-section">
       <div class="sorting flex flex-col md:flex-row justify-between">
         <div class="flex justify-between">
           <h2 class="py-1.5 mr-5 font-bold">Sort By View:</h2>
-            <div class="mb-3 w-96 md:w-52 mx-auto">
-              <select
-                class="form-select appearance-none block w-11/12 lg:w-11/12 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-red-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none"
-                aria-label="Default select example">
-                <option selected>Default</option>
-                <option value="1">Popular</option>
-              </select>
-            </div>
+          <div class="mb-3 w-96 md:w-52 mx-auto">
+            <select
+              class="form-select appearance-none block w-11/12 lg:w-11/12 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-red-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none"
+              aria-label="Default select example">
+              <option selected>Default</option>
+              <option value="1">Popular</option>
+            </select>
+          </div>
         </div>
         <div class="grid grid-cols-2 gap-4">
           <div class="">
@@ -166,56 +171,7 @@
     <!-- Articale Section  -->
     <section class="articale-section py-5">
       <div id="post-container" class="articale">
-        <article>
-          <!-- <div class="w-11/12 mx-auto">
-            <div class="flex flex-col md:flex-row  rounded-xl bg-white shadow-2xl p-5">
-              <div>
-                <img class=" w-full h-96 md:h-auto object-cover md:w-80 md:h-72 rounded-lg "
-                  src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg" alt="" />
-              </div>
-              <div class="p-6 flex flex-col justify-start">
-                <h5 class="text-gray-900 text-xl font-medium mb-2">Card title</h5>
-                <p class="text-gray-700 text-base mb-4">
-                  This is a wider card with supporting text below as a natural lead-in to additional content. This
-                  content is a little bit longer.
-                </p>
-                <p class="text-gray-700 text-base mb-4">
-                  This is a wider card with supporting text This is a wider card with supporting text...
-                </p>
-                <p class="text-gray-600 text-xs">Last updated 3 mins ago</p>
-                <div class="flex items-center justify-between">
-                  <div class="author-container flex my-5">
-                    <div class="author-img">
-                      <img src="/img/iman.png" class="rounded-full mr-5" style="height: 50px; width: 50px" alt=""
-                        loading="lazy" />
-                    </div>
-                    <div class="author-details">
-                      <div class="author name">
-                        <p>Jane Cooper</p>
-                        <p>Jan 10, 2022 </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="view-container flex">
-                    <p><i class="fa-regular fa-eye mr-2"></i></p>
-                    <p>1.5M</p>
-                  </div>
-                  <div class="review-container text-red-400">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half-stroke"></i>
-                  </div>
-                  <div class="details-container">
-                    <i class="fa-solid fa-arrow-right"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
-        </article>
-
+        <!-- Post Content Will display here  -->
       </div>
     </section>
     <!-- Spinner-Section  -->
@@ -227,30 +183,32 @@
     <!-- Modal Section  -->
     <section class="modal-section">
       <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
-      id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog relative w-auto pointer-events-none">
-        <div
-          class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
+        id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog relative w-auto pointer-events-none">
           <div
-            class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
-            <h5 id="post-title" class="text-xl font-medium leading-normal text-gray-800" id="exampleModalLabel">Modal title</h5>
-            <button type="button"
-          class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
-          data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
-          </div>
-          <div id="detils-post" class="modal-body relative p-4">
-            <!-- Modal body text goes here. -->
-          </div>
-          <div
-            class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
-            <button type="button" class="px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out" data-bs-dismiss="modal">
-              Close
-            </button>
-
+            class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
+            <div
+              class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
+              <h5 id="post-title" class="text-xl font-medium leading-normal text-gray-800" id="exampleModalLabel">Modal
+                title</h5>
+              <button type="button"
+                class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
+                data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div id="detils-post" class="modal-body relative p-4">
+              <!-- Modal body text goes here. -->
+            </div>
+            <div
+              class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
+              <button type="button"
+                class="px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out"
+                data-bs-dismiss="modal">
+                Close
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </section>
   </main>
   <footer class="bg-red-800 text-white">
@@ -260,7 +218,8 @@
           <div class="text-white text-3xl text-center md:text-start">
             <h2 class="uppercase"> <span class="text-red-600 font-bold font-extrabold">News</span> Network</h2>
           </div>
-          <p class="text-center md:text-start">News Network envisions a nation where citizens are aware of their rights, enjoy freedom of expression, dignity of life and gender equality and where the media is free.</p>
+          <p class="text-center md:text-start">News Network envisions a nation where citizens are aware of their rights,
+            enjoy freedom of expression, dignity of life and gender equality and where the media is free.</p>
         </div>
 
         <div class="mb-6">
@@ -340,7 +299,7 @@
       </div>
       <div class="flex flex-col md:flex-row items-center md:justify-between mb-6 border-t pt-10">
         <div class="">
-          <a href="#!" type="button"
+          <a href="https://www.facebook.com/mdev.imran/" target="_blank" type="button"
             class="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-red-600 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
             <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f"
               class="w-2 h-full mx-auto" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
@@ -349,7 +308,7 @@
               </path>
             </svg>
           </a>
-          <a href="#!" type="button"
+          <a href="https://www.instagram.com/imran.web_developer/" target="_blank" type="button"
             class="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-red-600 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
             <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram" class="w-3 h-full mx-auto"
               role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
