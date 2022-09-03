@@ -1,11 +1,8 @@
 
-
-const postContainer = document.getElementById('post-container')
 // Load Categories
 
 const loadCategories = async () => {
   const url = `https://openapi.programming-hero.com/api/news/categories`;
-
   try{
     const res = await fetch(url);
   const data = await res.json();
@@ -16,14 +13,9 @@ const loadCategories = async () => {
 }
 // Dispaly Categories
 const displayCategories =async categories => {
-  // const categories = await loadCategories();
-  // console.log(categories);
-  
   const categoryContainer = document.getElementById('category-container');
   categories?.forEach(category => {
-    // console.log(category)
     const {category_id,category_name} = category;
-    // console.log(category_id)
     const li = document.createElement('li');
     li.classList.add('nav-item');
     li.classList.add('pr-2');
@@ -35,7 +27,7 @@ const displayCategories =async categories => {
   });
   
 }
-
+// Load Category Posts
 const loadCategoryNews = async (id, name) => {
   const url = `https://openapi.programming-hero.com/api/news/category/0${id}`;
   toggleSpinner(true)
@@ -47,7 +39,7 @@ const loadCategoryNews = async (id, name) => {
     console.log(error)
   }
 }
-
+// Display Posts 
 const displayCategoryNews =  (categoryNews,name) => {
   if(categoryNews.length === 0){
     toggleSpinner(false);
@@ -58,7 +50,8 @@ const displayCategoryNews =  (categoryNews,name) => {
   `;
   const postContainer = document.getElementById('post-container')
   postContainer.innerHTML = '';
-   // sort 
+
+// sort by most viewed
    const sortFind = categoryNews.sort((minVew,maxView)=>{
     if(minVew.total_view < maxView.total_view){
         return 1;
@@ -68,13 +61,9 @@ const displayCategoryNews =  (categoryNews,name) => {
     }
 })
   categoryNews?.forEach(news => {
-    // console.log(news)
-    
     const {_id,thumbnail_url,title,details,author,total_view,rating} = news;
-    // console.log(_id)
     const {img,name,published_date} = author;
     const {number} = rating;
-    // console.log(thumbnail_url,title,details,author,total_view,rating)
     const article = document.createElement('article');
     article.innerHTML = `
     <div class="w-11/12 mx-auto py-5">
@@ -123,11 +112,8 @@ const displayCategoryNews =  (categoryNews,name) => {
   })
 }
 // Load Post Details
-
 const loadPostDetails = async id => {
-  // console.log(id)
   const url = `https://openapi.programming-hero.com/api/news/${id}`;
-  // console.log(url)
   try{
     const res = await fetch(url);
   const data = await res.json();
@@ -135,15 +121,11 @@ const loadPostDetails = async id => {
   }catch(error){
     console.log(error)
   }
-  
 }
-
+// Display Post Details With Modal 
 const displayPostDetails = detailsPost => {
-  console.log(detailsPost);
-
   const {title,image_url,details,author} = detailsPost;
   const {name,published_date} = author;
-  // console.log(title,image_url,details)
   const postTitle = document.getElementById('post-title');
   postTitle.innerHTML = title;
   const postDetails = document.getElementById('detils-post');
@@ -165,7 +147,6 @@ const toggleSpinner = isLoading => {
   }
 }
 
-///// Default
-
+//Default
 loadCategoryNews('5','Entertainment')
 loadCategories()
